@@ -1,6 +1,6 @@
 import React from 'react';
 
-var Hello = React.createClass({
+const Hello = React.createClass({
   render() {
     return <div>Hello, {this.props.name}</div>
   }
