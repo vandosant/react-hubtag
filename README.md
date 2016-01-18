@@ -16,7 +16,7 @@ npm start
 ## Related docs
 
 - Stuff to do [before the workshop](beforeclass.md)
-- [Copy/paste snippets](copypaste.md)
+- [Copy/paste snippets](copypaste-code.md)
 
 ## Goals of the workshop
 
