@@ -1,18 +1,9 @@
-import Router from './router'
-import styles from './styles/main.styl'
-import icons from 'octicons/octicons/octicons.css'
-import app from 'ampersand-app'
-import Me from './models/me'
+import React from 'react';
 
-window.app = app
-
-app.extend({
-  init () {
-    this.me = new Me()
-    this.me.fetchInitialData()
-    this.router = new Router()
-    this.router.history.start()
+var Hello = React.createClass({
+  render() {
+    return <div>Hello, {this.props.name}</div>
   }
-})
+});
 
-app.init()
+React.render(<Hello name='scott' />, document.body);
