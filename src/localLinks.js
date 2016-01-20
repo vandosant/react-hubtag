@@ -2,6 +2,9 @@ import React from 'react'
 import localLinks from 'local-links'
 
 class LocalLinks extends React.Component {
+  constructor() {
+    this.displayName = 'localLinks'
+  }
   onClick (event) {
     const pathName = localLinks.getLocalPathname(event)
     if (pathName) {
