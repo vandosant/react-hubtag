@@ -3,6 +3,7 @@ import localLinks from 'local-links'
 
 class LocalLinks extends React.Component {
   constructor() {
+    super()
     this.displayName = 'localLinks'
   }
   onClick (event) {
