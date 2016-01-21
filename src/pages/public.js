@@ -8,7 +8,7 @@ class Public extends React.Component {
       </header>
       <div>
         <p>We label stuff for you, because, we can&trade;</p>
-        <a href='/repos' className='button button-large'>
+        <a href='/login' className='button button-large'>
           <span className='mega-octicon octicon-mark-github'></span> Login with GitHub
         </a>
       </div>
