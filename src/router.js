@@ -3,12 +3,12 @@ import React from 'react'
 import Public from './pages/public'
 import Repos from './pages/repos'
 import Layout from './layout'
-import LocalLinks from './localLinks'
+import LinkHelper from './components/link-helper'
 
 export default Router.extend({
   renderPage(page, options = {layout: true}) {
     if (options.layout) {
-      page = <LocalLinks><Layout>{page}</Layout></LocalLinks>
+      page = <LinkHelper><Layout>{page}</Layout></LinkHelper>
     }
     React.render(page, document.body)
   },
@@ -17,7 +17,7 @@ export default Router.extend({
     'repos': 'repos'
   },
   public() {
-    this.renderPage(<LocalLinks><Public /></LocalLinks>, {layout: false})
+    this.renderPage(<LinkHelper><Public /></LinkHelper>, {layout: false})
   },
   repos() {
     this.renderPage(<Repos />)

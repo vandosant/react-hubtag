@@ -1,11 +1,7 @@
 import React from 'react'
 import localLinks from 'local-links'
 
-class LocalLinks extends React.Component {
-  constructor() {
-    super()
-    this.displayName = 'localLinks'
-  }
+class LinkHelper extends React.Component {
   onClick (event) {
     const pathName = localLinks.getLocalPathname(event)
     if (pathName) {
@@ -18,4 +14,4 @@ class LocalLinks extends React.Component {
   }
 }
 
-export default LocalLinks
+export default LinkHelper
