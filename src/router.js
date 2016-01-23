@@ -1,4 +1,5 @@
 import Router from 'ampersand-router'
+import app from 'ampersand-app'
 import React from 'react'
 import qs from 'qs'
 import xhr from 'xhr'
@@ -40,6 +41,7 @@ export default Router.extend({
       url: 'http://vandosant-gatekeeper.herokuapp.com/authenticate/' + code,
       json: true
     }, (err, req, body) => {
+      app.me.token = body.token
       console.log(body)
     })
   }
