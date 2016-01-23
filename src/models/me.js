@@ -17,12 +17,18 @@ export default Model.extend({
   },
   onTokenChange() {
     window.localStorage.token = this.token
+    this.fetchInitialData()
   },
   ajaxConfig() {
     return {
       headers: {
         Authorization: 'token ' + this.token
       }
+    }
+  },
+  fetchInitialData() {
+    if (this.token) {
+      this.fetch()
     }
   }
 })
