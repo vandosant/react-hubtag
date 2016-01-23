@@ -35,10 +35,10 @@ export default Router.extend({
     })
   },
   authCallback (query) {
-    query = qs.parse(query)
+    const {code} = qs.parse(query)
     xhr({
-      url: 'http://vandosant-gatekeeper.herokuapp.com/authenticate/' + query.code,
-      json:true
+      url: 'http://vandosant-gatekeeper.herokuapp.com/authenticate/' + code,
+      json: true
     }, (err, req, body) => {
       console.log(body)
     })
