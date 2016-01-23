@@ -19,7 +19,8 @@ export default Router.extend({
     '': 'public',
     'repos': 'repos',
     'login': 'login',
-    'auth/callback?:query': 'authCallback'
+    'logout': 'logout',
+    'auth/callback?:query': 'authCallback',
   },
   public() {
     this.renderPage(<LinkHelper><Public /></LinkHelper>, {layout: false})
@@ -41,8 +42,13 @@ export default Router.extend({
       url: 'http://vandosant-gatekeeper.herokuapp.com/authenticate/' + code,
       json: true
     }, (err, req, body) => {
-      app.me.token = body.token
       console.log(body)
+      app.me.token = body.token
+      this.redirectTo('/repos')
     })
+  },
+  logout() {
+    window.localStorage.clear()
+    window.location = '/'
   }
 })
