@@ -11,7 +11,7 @@ import LinkHelper from './components/link-helper'
 export default Router.extend({
   renderPage(page, options = {layout: true}) {
     if (options.layout) {
-      page = <LinkHelper><Layout>{page}</Layout></LinkHelper>
+      page = <LinkHelper><Layout me={app.me}>{page}</Layout></LinkHelper>
     }
     React.render(page, document.body)
   },
