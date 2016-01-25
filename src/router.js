@@ -26,7 +26,7 @@ export default Router.extend({
     this.renderPage(<LinkHelper><Public /></LinkHelper>, {layout: false})
   },
   repos() {
-    this.renderPage(<Repos />)
+    this.renderPage(<Repos repos={app.me.repos}/>)
   },
   login() {
     window.location = 'https://github.com/login/oauth/authorize?' +

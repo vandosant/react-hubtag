@@ -1,9 +1,18 @@
 import React from 'react'
+import ampersandMixin from 'ampersand-react-mixin'
 
-class Repos extends React.Component {
+export default React.createClass({
+  mixins: [ampersandMixin],
   render() {
-    return <h1>Repos</h1>
-  }
-}
+    const {repos} = this.props
+    return (
+      <div><h1>Repos</h1>
+        <ul>
+          {repos.map((repo) => <li><a href="">{repo.full_name}</a></li>
+          )}
+        </ul>
+      </div>
+    )
 
-export default Repos
+  }
+})
