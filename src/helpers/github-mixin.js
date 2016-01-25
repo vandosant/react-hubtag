@@ -1,7 +1,7 @@
 import app from 'ampersand-app'
 
 export default {
-  ajaxConfig () {
+  ajaxConfig() {
     return {
       headers: {
         Authorization: 'token ' + app.me.token
