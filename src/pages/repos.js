@@ -8,11 +8,10 @@ export default React.createClass({
     return (
       <div><h1>Repos</h1>
         <ul>
-          {repos.map((repo) => <li><a href="">{repo.full_name}</a></li>
+          {repos.map((repo) => <li key={repo.id}><a href="">{repo.full_name}</a></li>
           )}
         </ul>
       </div>
     )
-
   }
 })
