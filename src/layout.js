@@ -13,6 +13,7 @@ export default React.createClass({
           <ul className='list-unstyled list-inline cf'>
             <li>Labelr</li>
             <li><a href='/repos'>Repos</a></li>
+            <li className='pull-right'><span className="octicon octicon-octoface"></span></li>
             <li className='pull-right'><a href='/logout'>Logout</a> {me.login}</li>
           </ul>
         </nav>
