@@ -23,11 +23,11 @@ export default Model.extend(githubMixin, {
   onTokenChange() {
     window.localStorage.token = this.token
     this.fetchInitialData()
-    this.repos.fetch()
   },
   fetchInitialData() {
     if (this.token) {
       this.fetch()
+      this.repos.fetch()
     }
   }
 })
