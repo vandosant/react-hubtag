@@ -6,7 +6,7 @@ export default React.createClass({
     return (
       <div className='container'>
         <h1>{repo.full_name}</h1>
-        <p></p>
+        <p>{repo.id}</p>
         <ul></ul>
       </div>
     )
