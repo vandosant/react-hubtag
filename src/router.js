@@ -5,6 +5,7 @@ import qs from 'qs'
 import xhr from 'xhr'
 import Public from './pages/public'
 import Repos from './pages/repos'
+import RepoDetail from './pages/repo-detail'
 import Layout from './layout'
 import LinkHelper from './components/link-helper'
 
@@ -18,6 +19,7 @@ export default Router.extend({
   routes: {
     '': 'public',
     'repos': 'repos',
+    'repo/:owner/:name': 'repoDetail',
     'login': 'login',
     'logout': 'logout',
     'auth/callback?:query': 'authCallback',
@@ -27,6 +29,10 @@ export default Router.extend({
   },
   repos() {
     this.renderPage(<Repos repos={app.me.repos}/>)
+  },
+  repoDetail(owner, name) {
+    const model = app.me.repos.getByFullName(owner + '/' + name)
+    this.renderPage(<RepoDetail repo={model}/>)
   },
   login() {
     window.location = 'https://github.com/login/oauth/authorize?' +
