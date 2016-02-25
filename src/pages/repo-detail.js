@@ -1,13 +1,17 @@
 import React from 'react'
+import ampersandMixin from 'ampersand-react-mixin'
 
 export default React.createClass({
+  mixins: [ampersandMixin],
   render() {
-    const {repo} = this.props
+    const {repo, labels} = this.props
     return (
       <div className='container'>
         <h1>{repo.full_name}</h1>
-        <p>{repo.id}</p>
-        <ul></ul>
+        <ul>
+          {labels.map((label) => <li key={label.name}>{label.name}</li>
+          )}
+        </ul>
       </div>
     )
   }

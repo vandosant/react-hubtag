@@ -32,7 +32,7 @@ export default Router.extend({
   },
   repoDetail(owner, name) {
     const model = app.me.repos.getByFullName(owner + '/' + name)
-    this.renderPage(<RepoDetail repo={model}/>)
+    this.renderPage(<RepoDetail repo={model} labels={model.labels}/>)
   },
   login() {
     window.location = 'https://github.com/login/oauth/authorize?' +
