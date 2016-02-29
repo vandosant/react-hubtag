@@ -3,6 +3,7 @@ import React from 'react'
 export default React.createClass({
   render() {
     const {label} = this.props
+    const cssColor = '#' + label.color
     let content
     if (label.editing) {
       content = <form className='label'>
@@ -14,7 +15,7 @@ export default React.createClass({
       </form>
     } else {
       content = <div className='label'>
-        <span className='label-color'>&nbsp;</span>
+        <span className='label-color' style={{backgroundColor: cssColor}}>&nbsp;</span>
         <span>{label.name}</span>
         <span className='octicon octicon-pencil'></span>
         <span className='octicon octicon-x'></span>
