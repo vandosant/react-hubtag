@@ -10,7 +10,7 @@ export default React.createClass({
       <div className='container'>
         <h1>{repo.full_name}</h1>
         <ul>
-          {labels.map((label) => <LabelItem label={label} />
+          {labels.map((label) => <LabelItem key={label.name} label={label} />
           )}
         </ul>
       </div>
