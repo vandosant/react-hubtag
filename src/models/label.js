@@ -6,7 +6,6 @@ export default Model.extend({
     name: 'string',
     color: 'string'
   },
-  parent: Repo,
   session: {
     editing: {
       type: 'boolean',
