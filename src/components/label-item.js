@@ -22,7 +22,7 @@ export default React.createClass({
         <span className='label-color' style={{backgroundColor: cssColor}}>&nbsp;</span>
         <span>{label.name}</span>
         <span className='octicon octicon-pencil' onClick={(e) => {e.preventDefault(); label.editing = true}}></span>
-        <span className='octicon octicon-x'></span>
+        <span className='octicon octicon-x' onClick={(e) => {e.preventDefault(); label.destroy()}}></span>
       </div>
     }
     return (
