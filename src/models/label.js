@@ -16,7 +16,7 @@ export default Model.extend(gitHubMixin, {
     }
   },
   update(attrs) {
-    const initialAttrs = this.attrs
+    const initialAttrs = this.getAttributes({props: true, session: false})
     xhr({
       url: this.url(),
       json: attrs,
