@@ -13,7 +13,14 @@ export default Model.extend(gitHubMixin, {
     editing: {
       type: 'boolean',
       default: false
+    },
+    saved: {
+      type: 'boolean',
+      default: true
     }
+  },
+  isNew() {
+    return !this.saved
   },
   update(attrs) {
     const initialAttrs = this.getAttributes({props: true, session: false})
@@ -31,5 +38,6 @@ export default Model.extend(gitHubMixin, {
       }
     })
     this.set(attrs)
+
   }
 })
