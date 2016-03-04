@@ -38,6 +38,5 @@ export default Model.extend(gitHubMixin, {
       }
     })
     this.set(attrs)
-
   }
 })
