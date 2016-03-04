@@ -19,7 +19,7 @@ export default React.createClass({
     if (label.saved) {
       label.update(this.state)
     } else {
-      label.save(this.state)
+      label.save(this.state, {success: function() {label.saved = true}})
     }
 
     label.editing = false
