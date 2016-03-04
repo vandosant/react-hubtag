@@ -8,6 +8,7 @@ import Repos from './pages/repos'
 import RepoDetail from './pages/repo-detail'
 import Layout from './layout'
 import LinkHelper from './components/link-helper'
+import MessagePage from './components/message-page'
 
 export default Router.extend({
   renderPage(page, options = {layout: true}) {
@@ -23,6 +24,7 @@ export default Router.extend({
     'login': 'login',
     'logout': 'logout',
     'auth/callback?:query': 'authCallback',
+    '*catchall': 'catchall'
   },
   public() {
     this.renderPage(<LinkHelper><Public /></LinkHelper>, {layout: false})
@@ -52,11 +54,15 @@ export default Router.extend({
       app.me.token = body.token
       this.redirectTo('/repos')
     })
+    this.renderPage(<MessagePage title="Fetching Data" body="please wait, fetching your data!" />)
   },
   logout() {
     window.localStorage.clear()
     window.location = '/'
   },
+  catchall() {
+    this.renderPage(<MessagePage title="Not Found" body="sorry, nothing here!" />)
+  }
 })
 function requiresAuth(route) {
   return function () {
