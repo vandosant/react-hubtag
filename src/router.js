@@ -19,7 +19,7 @@ export default Router.extend({
   routes: {
     '': 'public',
     'repos': 'repos',
-    'repo/:owner/:name': 'repoDetail',
+    'repo/:owner/:name': requiresAuth('repoDetail'),
     'login': 'login',
     'logout': 'logout',
     'auth/callback?:query': 'authCallback',
@@ -56,5 +56,14 @@ export default Router.extend({
   logout() {
     window.localStorage.clear()
     window.location = '/'
-  }
+  },
 })
+function requiresAuth(route) {
+  return function () {
+    if (app.me.token) {
+      this[route].apply(this, arguments)
+    } else {
+      this.redirectTo('/')
+    }
+  }
+}
