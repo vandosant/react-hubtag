@@ -40,7 +40,7 @@ export default Router.extend({
   login() {
     window.location = 'https://github.com/login/oauth/authorize?' +
     qs.stringify({
-      client_id: config.cliendId,
+      client_id: config.clientId,
       redirect_uri: window.location.origin + '/auth/callback',
       scope: 'user,repo'
     })
