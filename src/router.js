@@ -9,6 +9,7 @@ import RepoDetail from './pages/repo-detail'
 import Layout from './layout'
 import LinkHelper from './components/link-helper'
 import MessagePage from './components/message-page'
+import config from 'config'
 
 export default Router.extend({
   renderPage(page, options = {layout: true}) {
@@ -39,7 +40,7 @@ export default Router.extend({
   login() {
     window.location = 'https://github.com/login/oauth/authorize?' +
     qs.stringify({
-      client_id: 'ffa9424ab602a3fd520a',
+      client_id: config.cliendId,
       redirect_uri: window.location.origin + '/auth/callback',
       scope: 'user,repo'
     })
@@ -47,7 +48,7 @@ export default Router.extend({
   authCallback (query) {
     const {code} = qs.parse(query)
     xhr({
-      url: 'http://vandosant-gatekeeper.herokuapp.com/authenticate/' + code,
+      url: config.authUrl + '/' + code,
       json: true
     }, (err, req, body) => {
       console.log(body)

@@ -1,12 +1,12 @@
 const config = {
   'localhost': {
-    authUrl: 'https://labelr-localhost.herokuapp.com/authenticate',
-    clientId: 'f8dd69187841cdd22a26'
+    authUrl: 'http://vandosant-gatekeeper.herokuapp.com/authenticate',
+    clientId: 'ffa9424ab602a3fd520a'
   },
 
-  'labelr.surge.sh': {
-    authUrl: 'https://labelr-production.herokuapp.com/authenticate',
-    clientId: '9cc77faf5ffc6f6f9b9a'
+  'vandosant-hubtag.surge.sh': {
+    authUrl: 'http://vandosant-gatekeeper.herokuapp.com/authenticate',
+    clientId: 'ffa9424ab602a3fd520a'
   }
 }[window.location.hostname]
 
