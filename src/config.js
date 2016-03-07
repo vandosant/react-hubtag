@@ -5,7 +5,7 @@ const config = {
   },
 
   'vandosant-hubtag.surge.sh': {
-    authUrl: 'http://vandosant-gatekeeper.herokuapp.com/authenticate',
+    authUrl: 'http://vandosant-gatekeeper-prod.herokuapp.com/authenticate',
     clientId: '5f69c671afe8d48b4a1f'
   }
 }[window.location.hostname]
