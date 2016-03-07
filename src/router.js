@@ -9,7 +9,7 @@ import RepoDetail from './pages/repo-detail'
 import Layout from './layout'
 import LinkHelper from './components/link-helper'
 import MessagePage from './components/message-page'
-import config from 'config'
+import config from './config'
 
 export default Router.extend({
   renderPage(page, options = {layout: true}) {
